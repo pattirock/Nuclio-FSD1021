@@ -1,0 +1,9 @@
+.container {
+  background: #f1efef;
+  width: 250px;
+  height: calc(100vh - 30px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 30px;
+}

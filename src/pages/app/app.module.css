@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  max-width: cacl(100vw - 250px);
+  height: 100vh;
+  background: white;
+}
