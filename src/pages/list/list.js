@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Card from './card/card';
-import data from '../../assets/response.json';
 import styles from './list.module.css';
 import Modal from '../../components/modal/modal';
 
 const List = ({ searchValue }) => {
   const [selectedItem, setSelectedItem] = useState();
   const [filteredData, setFilteredData] = useState([]);
+  const [data, setData] = useState([]);
   useEffect(() => {
     if (searchValue !== '') {
       setFilteredData(data.filter(({ title }) => {
@@ -17,9 +17,15 @@ const List = ({ searchValue }) => {
   }, [searchValue, setFilteredData]);
 
   useEffect(() => {
+    if (data.length) {
+      setFilteredData(data);
+    }
+  }, [data, setFilteredData]);
+
+  useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/photos?_start=0&_limit=100')
       .then(response => response.json())
-      .then(json => setFilteredData(json))
+      .then(json => setData(json))
   }, []);
 
   return (
