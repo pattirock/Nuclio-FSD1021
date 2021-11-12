@@ -17,10 +17,13 @@
 }
 
 .content {
-  width: 600px;
-  height: 600px;
+  width: 540px;
+  height: 520px;
   background-color: white;
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
 }
