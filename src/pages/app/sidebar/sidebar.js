@@ -5,7 +5,7 @@ import styles from './sidebar.module.css'
 const Sidebar = ({ onSearch = (value) => {} }) => {
   return (
     <div className={styles.container}>
-      <img src={logo} width={100} />
+      <img src={logo} alt="PhotoImage" width={100} />
 
       <div className={styles.searchbar}>
         <input onChange={event => {

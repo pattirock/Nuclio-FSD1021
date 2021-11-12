@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  list-style: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.selected {
+  font-weight: bold;
+}
