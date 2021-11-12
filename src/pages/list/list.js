@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from './card/card';
 import data from '../../assets/beers.json';
 import styles from './list.module.css';
 
-const List = () => {
-  console.debug(data);
+const List = ({ searchValue }) => {
+  const [filteredData, setFilteredData] = useState(data);
+  useEffect(() => {
+    if (searchValue !== '') {
+      setFilteredData(data.filter(({ name }) => {
+        const regex = new RegExp(searchValue, 'g');
+        return regex.test(name);
+      }))
+    }
+  }, [searchValue, setFilteredData]);
+
   return (
     <div className={styles.container}>
-      {data.map(beer => <Card beer={beer} />)}
+      {filteredData.map(beer => <Card beer={beer} />)}
     </div>
   );
 };

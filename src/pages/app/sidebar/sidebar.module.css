@@ -4,7 +4,20 @@
   min-height: calc(100vh - 30px);
   height: 100%;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   padding-top: 30px;
+}
+
+.searchbar {
+  margin-top: 40px;
+}
+
+.searchbar > input {
+  border: none;
+  width: calc(100% - 30px);
+  padding: 7px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 0 rgb(25 145 255 / 8%);
 }
