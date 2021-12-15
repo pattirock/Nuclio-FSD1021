@@ -6,7 +6,6 @@ const Card = ({ item, onClick }) => {
   const navigate = useNavigate();
   return (
     <div className={styles.container} style={{ backgroundImage: `url(${item.thumbnailUrl})` }} onClick={() => {
-      console.debug(item.id);
      navigate(`/photo/${item.id}`);
       // onClick();
     }}>
